@@ -110,29 +110,30 @@ def remove_junk_files(folder_path):
 # Function to display the main menu
 def display_menu():
     print("---------- Bit Protect Menu ----------")
-    print("1. Scan and compare full system")
-    print("2. Scan and delete files in a folder")
-    print("3. Scan and delete a file")
-    print("4. Free RAM storage and boost RAM")
-    print("5. Remove junk files in a folder")
-    print("6. Exit")
+    #print("1. Scan and compare full system")
+    print("1. Scan and delete files in a folder")
+    print("2. Scan and delete a file")
+ #   print("4. Free RAM storage and boost RAM")
+    print("3. Remove junk files in a folder")
+    print("4. Exit")
     print("--------------------------------------")
 
 # Function to display the Bit Protect heading
 def display_heading():
-    print(r"""
- oooooooooo.   o8o      .                                     .                           .   
-`888'   `Y8b  `"'    .o8                                   .o8                         .o8   
- 888     888 oooo  .o888oo oo.ooooo.  oooo d8b  .ooooo.  .o888oo  .ooooo.   .ooooo.  .o888oo 
- 888oooo888' `888    888    888' `88b `888""8P d88' `88b   888   d88' `88b d88' `"Y8   888   
- 888    `88b  888    888    888   888  888     888   888   888   888ooo888 888         888   
- 888    .88P  888    888 .  888   888  888     888   888   888 . 888    .o 888   .o8   888 . 
-o888bood8P'  o888o   "888"  888bod8P' d888b    `Y8bod8P'   "888" `Y8bod8P' `Y8bod8P'   "888" 
-                            888                                                              
-                           o888o                                                             
-                                                                                              
-                                         
-    """)
+    print("Archita's antivirus")
+#     print(r"""
+#  oooooooooo.   o8o      .                                     .                           .
+# `888'   `Y8b  `"'    .o8                                   .o8                         .o8
+#  888     888 oooo  .o888oo oo.ooooo.  oooo d8b  .ooooo.  .o888oo  .ooooo.   .ooooo.  .o888oo
+#  888oooo888' `888    888    888' `88b `888""8P d88' `88b   888   d88' `88b d88' `"Y8   888
+#  888    `88b  888    888    888   888  888     888   888   888   888ooo888 888         888
+#  888    .88P  888    888 .  888   888  888     888   888   888 . 888    .o 888   .o8   888 .
+# o888bood8P'  o888o   "888"  888bod8P' d888b    `Y8bod8P'   "888" `Y8bod8P' `Y8bod8P'   "888"
+#                             888
+#                            o888o
+
+
+#     """)
 
 # Load virus hash values from the file hash.txt
 with open('hash.txt', 'r') as hash_file:
@@ -142,22 +143,22 @@ with open('hash.txt', 'r') as hash_file:
 while True:
     display_heading()
     display_menu()
-    choice = input("Enter your choice (1-6): ")
-    
+    choice = input("Enter your choice (1-4): ")
+
+    #if choice == '1':
+        #scan_and_delete(virus_hashes, '/')
     if choice == '1':
-        scan_and_delete(virus_hashes, '/')
-    elif choice == '2':
         folder_path = input("Enter the folder path: ")
         scan_and_delete(virus_hashes, folder_path)
-    elif choice == '3':
+    elif choice == '2':
         file_path = input("Enter the file path: ")
        # scan_and_delete_file(file_path, virus_hashes)
-    elif choice == '4':
-        free_ram_boost()
-    elif choice == '5':
+   # elif choice == '4':
+        #free_ram_boost()
+    elif choice == '3':
         folder_path = input("Enter the folder path: ")
         remove_junk_files(folder_path)
-    elif choice == '6':
+    elif choice == '4':
         print("Exiting Bit Protect...")
         break
     else:
